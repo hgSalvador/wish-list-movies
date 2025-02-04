@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:3333
+@username = hugo.salvador
+@password = 12345
+
+
+
+
+### Login com Basic Auth
+GET {{baseUrl}}/movies
+Authorization: Basic {{username}}:{{password}}
+
