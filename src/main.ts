@@ -6,14 +6,12 @@ import { Env } from './env';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger: false
+    // logger: false
   });
 
   const configService = app.get<ConfigService<Env, true>>(ConfigService)
   const PORT = configService.get('PORT', { infer: true })
 
-
   await app.listen(PORT);
-  console.log(`🚀 Server running on http://localhost:${PORT}`)
 }
 bootstrap();
